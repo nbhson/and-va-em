@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Dancing Script", cursive;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.app {
+  background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+}
+.fade-enter-active {
+  transition: all 0.3s ease;
+}
+.fade-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+span {
+  position: absolute;
+  background: url("./assets/images/heart.svg");
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%);
+    filter: hue-rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -1000%);
+    filter: hue-rotate(720deg);
+    opacity: 0;
+  }
+}
+
+div#anni {
+  color: rgb(243, 92, 117);
+}
+.card-parent {
+  border-radius: 25px;
+}
+time {
+  font-size: 1.5em;
+}
+h1 {
+  font-size: 5em;
+}
+h3 {
+  font-size: 3em;
+}
+h3#date {
+  color: red;
+  font-weight: bold;
+}
+.full-screen {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+img.avt {
+  width: 175px;
+  height: 175px;
+  border-radius: 175px;
+}
+.content {
+  height: 80vh;
+  width: 80%;
+  background: rgba(255, 255, 255, 0.7);
+}
+.heart {
+  width: 64px;
+  animation: heartBeat 1s ease-in-out infinite;
+}
+
+@media screen and (max-width: 992px) {
+  h1 {
+    font-size: 3em;
+  }
+  h3 {
+    font-size: 2em;
+  }
+  img.avt {
+    width: 190px;
+    height: 190px;
+    border-radius: 190px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 3em;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  img.avt {
+    width: 170px;
+    height: 170px;
+    border-radius: 170px;
+  }
+  .content {
+    height: 90vh;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: 3em;
+  }
+  h3 {
+    font-size: 1em;
+  }
+  .content {
+    height: 90vh;
+  }
+  img.avt {
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+  }
+  .heart {
+    width: 32px;
+  }
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(0.9);
+  }
+
+  45% {
+    transform: scale(1.1);
+  }
+
+  70% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+.banner .clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.banner .clouds img {
+  position: absolute;
+  bottom: -70px;
+  max-width: 100%;
+  animation: animate calc(8s * var(--i)) linear infinite;
+  user-select: none;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .banner .clouds img {
+    bottom: -50px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .banner .clouds img {
+    bottom: -30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .banner .clouds img {
+    bottom: -10px;
+  }
+}
