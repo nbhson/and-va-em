@@ -46,7 +46,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 document.addEventListener("click", function (e) {
-  console.log("click");
   var body = document.querySelector("body");
   var heart = document.createElement("span");
   var x = e.offsetX;
@@ -61,4 +60,18 @@ document.addEventListener("click", function (e) {
   setTimeout(function () {
     heart.remove();
   }, 3000);
+
+  playAudio();
 });
+
+function playAudio() {
+  var audio = document.getElementById("myAudio");
+  
+  if (audio.paused) {
+    audio.muted = false;
+    audio.play();  
+  } else {
+    audio.muted = true;
+    audio.pause(); 
+  }
+}
